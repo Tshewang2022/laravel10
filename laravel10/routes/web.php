@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,3 +31,7 @@ Route::controller(AuthController::class)->group(function(){
     Route::post('login', 'loginAction')->name('login.action');
 
 });
+
+
+// Routes for the home
+Route::get('/home', [HomeController::class, 'index'])->name('home');
