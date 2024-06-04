@@ -30,8 +30,20 @@ Route::controller(AuthController::class)->group(function(){
     //routes fetching the data from the database
     Route::post('login', 'loginAction')->name('login.action');
 
+    //routes for the logout
+    Route::get('logout', 'logout')->middleware('auth')->name('logout');
+
 });
 
 
 // Routes for the home
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+// routes for the normal user
+
+
+
+
+// routes for the admin user
+
