@@ -35,15 +35,14 @@ Route::controller(AuthController::class)->group(function(){
 
 });
 
-
 // Routes for the home
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+// routes for the normal user and we are using the middleware to check the http routes
+// Route::middleware(['auth', 'user-access:user'])->group(function (){
+//     Route::get('/home', [HomeController::class, 'index'])->name('home');
+// });
 
-
-// routes for the normal user
-
-
-
-
-// routes for the admin user
-
+// // routes for the admin user and using the middleware to filter the http request
+// Route::middleware(['auth', 'user-access"admin'])->group(function(){
+//     Route::get('/home/admin', [HomeController::class, 'adminHome'])->name('adminHome');
+// });

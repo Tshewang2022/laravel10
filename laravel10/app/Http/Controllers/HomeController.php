@@ -12,4 +12,9 @@ class HomeController extends Controller
     public function index(){
         return view('home');
     }
+
+    // function to check if it is admin, giving the admin dashboard
+    public function adminHome(){
+        return view('dashboard');
+    }
 }

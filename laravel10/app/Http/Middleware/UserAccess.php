@@ -15,7 +15,8 @@ class UserAccess
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth->user()->type== $userType){
+        // this is not going to because if do not have the type defined in the models
+        if(auth()->user()->type== $userType){
             return $next($request);
         }
         return response()->json(['You do not have permission to access for this page']);
